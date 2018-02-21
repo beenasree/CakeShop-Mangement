@@ -1,0 +1,60 @@
+﻿@model Cake_Hut.Models.Login
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Login</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.User_Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.User_Id)
+            @Html.ValidationMessageFor(model => model.User_Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.User_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.User_Name)
+            @Html.ValidationMessageFor(model => model.User_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Role)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Role)
+            @Html.ValidationMessageFor(model => model.Role)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
